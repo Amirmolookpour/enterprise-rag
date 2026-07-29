@@ -2,12 +2,17 @@ FROM python:3.10-slim
 
 WORKDIR /code
 
+ENV PYTHONUNBUFFERED=1
+ENV HF_HOME=/code/.cache/huggingface
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+RUN python -c "from langchain_huggingface import HuggingFaceEmbeddings; HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')"
 
 COPY . /code
 
