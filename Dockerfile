@@ -16,6 +16,6 @@ RUN mkdir -p /code/storage/uploads /code/storage/faiss_indexes /code/storage/log
 RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /code
 USER appuser
 
-EXPOSE 7860
+EXPOSE 8080
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
