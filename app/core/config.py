@@ -10,7 +10,7 @@ ALLOWED_LOG_LEVELS = {"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}
 
 
 class Settings(BaseSettings):
-    PORT: int = 8000
+    PORT: int = 8080
     HOST: str = "0.0.0.0"
 
     DATABASE_URL: str = "sqlite:///./database.db"
