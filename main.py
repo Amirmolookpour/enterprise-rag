@@ -15,7 +15,7 @@ from app.database import models
 from app.api.routes import router as api_router
 
 
-#os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["HF_HUB_OFFLINE"] = "1"
 STATIC_DIR = "app/static"
 
 
@@ -65,7 +65,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # این ستاره اجازه میده گیت‌هاب پیجز به سرورت وصل بشه
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],  
     allow_headers=["*"], 
