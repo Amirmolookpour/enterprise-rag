@@ -1,5 +1,7 @@
 🏢 Enterprise Document Intelligence (RAG)
+
 A production-ready, enterprise-grade Retrieval-Augmented Generation (RAG) platform. Upload complex PDFs and get accurate, real-time streaming answers powered by Hybrid Search and Semantic Reranking.
+
 🚀 Live Demo
 Service
 Link
