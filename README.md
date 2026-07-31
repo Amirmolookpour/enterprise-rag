@@ -1,7 +1,5 @@
 🏢 Enterprise Document Intelligence (RAG)
-
 A production-ready, enterprise-grade Retrieval-Augmented Generation (RAG) platform. Upload complex PDFs and get accurate, real-time streaming answers powered by Hybrid Search and Semantic Reranking.
-
 🚀 Live Demo
 Service
 Link
@@ -14,7 +12,7 @@ Document Upload → Chunking → FAISS (Dense) + BM25 (Sparse)
                                      │
 User Query → React UI → FastAPI → Hybrid Search → Cohere Reranker → Groq LLM → Streaming Response
                                                                                      │
-                                                                             Real-time Citations
+                                                                          Real-time Citations
 ✨ Features
 🧠 Hybrid Search Engine — Combines FAISS (semantic) and BM25 (keyword) search for maximum recall.
 🎯 Precision Reranking — Uses Cohere Rerank to re-order retrieved context by true relevance.
@@ -108,6 +106,7 @@ PORT=8000
 HOST=0.0.0.0
 Frontend (.env)
 VITE_API_BASE_URL=https://enterprise-rag1.fly.dev
+
 📊 How It Works
 Ingestion — A PDF is uploaded, parsed, semantically chunked, and indexed in both FAISS (dense) and BM25 (sparse). Metadata is stored in SQLite.
 Hybrid Search — On each query, vector and keyword searches run in parallel to retrieve the top candidate chunks.
@@ -115,7 +114,6 @@ Reranking — Retrieved chunks are sent to Cohere for re-ordering based on stric
 Generation — The top-ranked chunks are passed to Groq (Llama 3.3) as context for answer generation.
 Streaming — The answer streams back to the React UI token-by-token, along with exact page citations.
 🙋 Author
-Amir Molookpour
-GitHub: @Amirmolookpour (https://github.com/Amirmolookpour)
+Amir Molookpour GitHub: @Amirmolookpour (https://github.com/Amirmolookpour)
 📄 License
 This project is licensed under the MIT License.
